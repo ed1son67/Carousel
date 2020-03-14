@@ -1,4 +1,4 @@
-# swiper
+# Carousel
 
 ## Project setup
 ```
