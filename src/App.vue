@@ -1,17 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>demo </div>
+    <Carousel :height= '200'>
+      <CarouselItem style="background: red">
+        1
+      </CarouselItem >
+       <CarouselItem style="background: blue">
+        2
+      </CarouselItem>
+      <CarouselItem style="background: green">
+        3
+      </CarouselItem>
+      <CarouselItem style="background: pink">
+        4
+      </CarouselItem>
+      <CarouselItem style="background: gray">
+        5
+      </CarouselItem>
+    </Carousel >
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Carousel from './components/Carousel.vue'
+import CarouselItem from './components/CarouselItem.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Carousel,
+    CarouselItem
+  },
+  mounted() {
+    (function() {
+      let deviceWith = document.documentElement.clientWidth;
+      deviceWith = deviceWith < 320 ? 320 : deviceWith > 640 ? 640 : deviceWith;
+      document.documentElement.style.fontSize = deviceWith / 7.50 + 'px';
+    })();
   }
 }
 </script>
@@ -23,6 +47,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
 </style>
